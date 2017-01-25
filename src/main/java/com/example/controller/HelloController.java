@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,10 +17,16 @@ public class HelloController {
 	}
 	
 	@RequestMapping("getAllFruit")
-	public FruitModel getAllFruit(){
+	public ArrayList<FruitModel> getAllFruit(){
+		
+		ArrayList<FruitModel> fruitList=new ArrayList();
 		
 		FruitModel model=new FruitModel("Mango","Too good");
-		return model;
+		FruitModel model1=new FruitModel("Banana","Too good do you think so");
+		
+		fruitList.add(model);
+		fruitList.add(model1);
+		return fruitList;
 		
 		
 	}
